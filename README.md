@@ -10,3 +10,4 @@ when all questions are answered or the timer reaches 0, game is over
 then I can save my initials and score
 
 I WANT to store high scores SO THAT I can gauge my progress compared to my peers
+

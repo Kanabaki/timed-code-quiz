@@ -1,38 +1,145 @@
 <!DOCTYPE html>
-<html lang="en-US"></html>
-    <head>
-     <meta charset="UTF-8" />
-      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link rel="stylesheet" href="./style.css">
-     <title>Code Quiz</title>
+<html lang="en-US">
+
+</html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css">
+    <title>Code Quiz</title>
 </head>
+
 <body>
     <div class="start-screen">
-        <h1>Web Dev Code Quiz</h1>
+        <h1 class="start-h1">Web Dev Code Quiz</h1>
         <button id="start-button">Start!</button>
     </div>
-    <div id="display-container">
-        <div class="header">
-                 <span class="number-of-question">
-       1 of 6 questions
-                </span>
-            </div>
-            <div class="timer-div">
-                <img src="./Assets/timer.png" alt="Timer Image" width="20px">
+    <div id="display-container" class="hide">
+        <div class="timer-div">
+            <img src="./Assets/timer.png" alt="Timer Image" width="20px">
             <span class="time-left">11s</span>
         </div>
-        <div id="container">
-            <!--Questions and Options will display here-->
+        <div id="questions-container">
+
+            <div class="card">
+                <h2 class="card-question" id="question-text"></h2>
+                <ul id="question-options"></ul>
+                <p id="question-status">
+                    correct: "To create dynamic Webpage content",
+                </p>
+            </div>
+            <!--
+<div class="card" id="1">    
+    <h2 class="card-question">Arrays in JavaScript can be used to store ____.</h2>
+    <ul>
+        <li>Numbers and strings</li>
+        <li>Other arrays</li>
+        <li>Booleans</li>
+        <li>All of the above</li>
+    </ul>
+    correct: All of the above
+</div> 
+
+<div class="card" id="2">    
+    <h2 class="card-question"></h2>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div> 
+
+<div class="card" id="3">    
+    <h2 class="card-question"></h2>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div> 
+
+<div class="card" id="4">    
+    <h2 class="card-question"></h2>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div> 
+
+<div class="card" id="5">    
+    <h2 class="card-question"></h2>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div> 
+
+<div class="card" id="6">    
+    <h2 class="card-question"></h2>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div> 
+
+
+        
+
+-->
+            <!--
+     id: "2",
+question: "Commenting in Javascript is done with which of the following?",
+options: [ "//comment//","/*comment*/","=comment=","||comment||"
+correct: "//comment//"
+
+    id: "3",
+question: "Commonly used data types DO NOT include",
+options: ["Strings", "Alerts", "Booleans", "Numbers",],
+correct: "Alerts",
+  
+
+  {
+        id: "4",
+question: "What method is used to listen for events happening to an element?",
+options: ["addEventListener","querySelector","getElementById", "find"],
+correct: "addEventListener",
+    }, 
+
+    {
+id: "5",
+question: "The condition in an if/else statement is enclosed within ____.",
+options: ["Curly Brackets","Parentheses","Asterisks","Equal Signs"],
+correct: "Parentheses",
+    },
+
+   
+        id: "6",
+question: "String values must be enclosed within ____ when being assigned to variables.",
+options: [
+    "Square Brackets", "Curly Brackets", "Quotes", "Parentheses"],
+correct: "Quotes",
+    
+-->
         </div>
-        <button id="next-button">Next</button>
+        <!-- <button id="next-button" class="hide">Next</button> -->
     </div>
     <div class="score-container hide">
         <div id="user-score"> Score</div>
-<button id="restart">Restart</button>
+        <button id="restart" class="hide">Restart</button>
     </div>
 
 
     <script src="./2script.js"></script>
 </body>
+
 </html>

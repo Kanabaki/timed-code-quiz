@@ -10,10 +10,12 @@ let startButton = document.getElementById("start-button");
 let questionText = document.getElementById("question-text");
 let questionOptions = document.getElementById("question-options")
 let questionCount;
-let scoreCount = 0;
 let count = 60;
 let countdown;
 let choices = document.querySelectorAll(".li")
+
+let scoreCount = localStorage.getItem('scoreCount');
+userScore.textContent = scoreCount;
 
 let QnA = [
     {
@@ -25,29 +27,27 @@ let QnA = [
         question: "Commonly used data types DO NOT include",
         options: ["Strings", "Alerts", "Booleans", "Numbers",],
         correct: "Alerts",
-    }
+    },
+    {
+        question: "What method is used to listen for events happening to an element?",
+        options: ["addEventListener","querySelector","getElementById", "find"],
+        correct: "addEventListener",
+    }, 
+    {
+              
+        question: "The condition in an if/else statement is enclosed within ____.",
+        options: ["Curly Brackets","Parentheses","Asterisks","Equal Signs"],
+        correct: "Parentheses",
+    },
+    {
+        question: "String values must be enclosed within ____ when being assigned to variables.",
+     options: [
+        "Square Brackets", "Curly Brackets", "Quotes", "Parentheses"],
+     correct: "Quotes",
+    },
 ]
 
-//   {
-//         id: "4",
-// question: "What method is used to listen for events happening to an element?",
-// options: ["addEventListener","querySelector","getElementById", "find"],
-// correct: "addEventListener",
-//     }, 
-
-//     {
-// id: "5",
-// question: "The condition in an if/else statement is enclosed within ____.",
-// options: ["Curly Brackets","Parentheses","Asterisks","Equal Signs"],
-// correct: "Parentheses",
-//     },
-
-   
-//         id: "6",
-// question: "String values must be enclosed within ____ when being assigned to variables.",
-// options: [
-//     "Square Brackets", "Curly Brackets", "Quotes", "Parentheses"],
-// correct: "Quotes",
+      
 
 //when you click start, a question appears
 startButton.addEventListener("click", startGame)
@@ -57,9 +57,10 @@ function startGame() {
     startButton.classList.add("hide");
     startScreen.classList.add("hide");
     displayContainer.classList.remove("hide");
+    scoreContainer.classList.remove("hide");
     timeLeft.textContent = count + 's';
     questionCount = 0;
-    // nextBtn.classList.remove("hide");
+
 
     timerStarts()
     nextQuestion()
@@ -97,7 +98,11 @@ function nextQuestion () {
 function checkAnswer (e) {
     let chosenValue = e.target.textContent;
     if(chosenValue === QnA[questionCount].correct) {
-        console.log('correct')
+        console.log('correct')}
+     if (chosenValue === QnA[questionCount].correct||scoreCount <5) {
+        scoreCount++;
+        userScore.textContent = scoreCount;
+        localStorage.setItem('scoreCount', scoreCount)
     }else {
         console.log('incorrect')
         count -= 5
@@ -107,18 +112,4 @@ function checkAnswer (e) {
     if(questionCount < QnA.length) {
         nextQuestion()
     }
-}
-/*
-
-
 };
-//trying to select a li
-let question1 = document.getElementById(".0");
-
-if (question1 li=="correct"){
-console.log(question1 + " is correct")
-}else{
-    console.log(question1 + " is incorrect")
-};*/
-
-//run a for loop to check through the choices and see which string matches the answer
